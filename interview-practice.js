@@ -10,6 +10,13 @@ var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n',
 // Use filter to return just the vowels from the array letters
 filter(letters, function(letter) {
   // your code here
+  return ["a","e","i","o","u"].indexOf(letter) != -1;;
+});
+
+// Use filter to return everything that is not equal to the last element of the collection
+filter(numbers, function(element) {
+  // your code here
+  return element != numbers[numbers.length-1];
 });
 
 
@@ -51,4 +58,26 @@ filter(letters, function(letter) {
 
 // Return the sum of the even numbers using filter and reduce together
 // NO HINTS: All of your code here
+
+var nestedArray = [ [3,7,5,9], [8,5,6,3,9], [9,5,1], [8,4,2,0] ]
+
+// Use filter to return an array of arrays where the first element of each sub-array
+// is greater than the last element of that sub-array
+
+filter(nestedArray, function(element) {
+  // your code here
+  return element[0] > element[element.length-1];
+})
+
+// Use filter to return an array of arrays where each element in the sub-array
+// is an odd number
+
+filter(nestedArray, function(element) {
+  // your code here
+}
+
+// Use map and reduce to return an array that contains the sum of each sub array
+// No hints: your code here
+
+
 
