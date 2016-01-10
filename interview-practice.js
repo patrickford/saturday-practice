@@ -72,12 +72,69 @@ filter(nestedArray, function(element) {
 // Use filter to return an array of arrays where each element in the sub-array
 // is an odd number
 
+
 filter(nestedArray, function(element) {
-  // your code here
+  var result = true;
+  for (var i = 0; i < element.length; i++) {
+    if (element[i] % 2 == 0) {
+      result = false;
+    }
+  }
+  return result;
+})
+
+function odd(x) {
+  return x % 2 != 0;
 }
+
+filter(nestedArray, function(element) {
+  return every(element, odd);
+});
 
 // Use map and reduce to return an array that contains the sum of each sub array
 // No hints: your code here
 
+myArray = [1,2,3,4,5];
+
+function add(x, y) {
+  return x + y;
+}
+
+function mult(x, y) {
+  return x * y;
+}
+
+function reduce(collection, callback, initial) {
+  var accumulator = initial;
+  each(collection, function(element) {
+    if (accumulator === undefined) {
+      accumulator = element;
+    } else {
+      accumulator = callback(accumulator, element);
+    }
+  });
+  return accumulator;
+}
+
+function contains(collection, target) {
+  return reduce(collection, function(accumulator, element) {
+    return accumulator || element === target;
+  }, false)
+}
+
+var newArray = [1,2,3,1,2,1,2]
+
+{1 : 3, 2 : 3, 3 : 1}
+
+function histogram(collection) {
+  return reduce(collection, function(accumulator, element) {
+    if (accumulator[element]) {
+      accumulator[element]++;
+    } else {
+      accumulator[element] = 1;
+    }
+    return accumulator;
+  }, {})
+}
 
 
