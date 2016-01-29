@@ -1,9 +1,13 @@
-myArray = [1,2,3,4,5];
+var myArray = [1,2,3,4,5];
 
-myObj = {
+var myObj = {
   name : "Joe",
   age : 30,
   location : "Maui"
+}
+
+function print(value) {
+  console.log(value);
 }
 
 function add10(x) {
@@ -123,17 +127,8 @@ function histogram(collection) {
 
 function histogram(collection) {
   return reduce(collection, function(accumulator, element) {
-    accumulator[element] = accumulator[element] ? accumulator[element] + 1 : 1;
+    accumulator[element] = accumulator[element] === undefined ? accumulator[element] + 1 : 1;
     return accumulator;
   }, {});
-}
-
-var myCar = {
-  make: "Ford",
-  model: "Escape"
-}
-
-myCar.go = function() {
-  console.log("vroom");
 }
 
